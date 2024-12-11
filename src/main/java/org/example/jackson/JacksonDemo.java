@@ -58,14 +58,9 @@ public class JacksonDemo {
 
     public static void main(String[] args) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
+        String text = "{\"firstName\":\"Peter\",\"lastName\":\"Parker\",\"age\":20,\"hobbies\":[\"Photo\",\"Jumping\",\"Saving people\"]}";
 
-        System.out.println(objectMapper.readValue(
-                "{\"firstName\":\"Peter\",\"lastName\":\"Quill\",\"age\":40,\"hobbies\":[\"Dancing\",\"Starships\",\"Music\"]}",
-                Person.class)
-        );
-        System.out.println(objectMapper.readValue(
-                "{\"firstName\":\"Peter\",\"lastName\":\"Quill\",\"age\":40,\"hobbies\":[\"Dancing\",\"Starships\",\"Music\"]}",
-                Person.class)
-        );
+        System.out.println(objectMapper.readValue(text, Person.class));
+        System.out.println(objectMapper.readValue(text, Person.class));
     }
 }
